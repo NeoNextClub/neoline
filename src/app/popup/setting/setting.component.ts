@@ -13,6 +13,7 @@ import {
     AssetState,
     SettingState,
 } from '@app/core';
+import { CurrencyType, LanguagesType } from '../_lib/setting';
 
 @Component({
     templateUrl: 'setting.component.html',
@@ -62,7 +63,7 @@ export class PopupSettingComponent implements OnInit {
         return this.dialog.open(PopupSelectDialogComponent, {
             data: {
                 currentOption: this.lang,
-                optionGroup: ['en', 'zh_CN'],
+                optionGroup: LanguagesType,
                 type: 'lang',
             },
             panelClass: 'custom-dialog-panel',
@@ -73,7 +74,7 @@ export class PopupSettingComponent implements OnInit {
         const tempDialog = this.dialog.open(PopupSelectDialogComponent, {
             data: {
                 currentOption: this.rateCurrency,
-                optionGroup: this.rateCurrencys,
+                optionGroup: CurrencyType,
                 type: 'currency',
             },
             panelClass: 'custom-dialog-panel',
